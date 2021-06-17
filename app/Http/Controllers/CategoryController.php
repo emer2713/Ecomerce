@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
+
 
 class CategoryController extends Controller
 {
@@ -14,7 +17,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::orderby('id'.'DESC')->paginate(15);
+        $categories = Category::orderby('id','DESC')->paginate(15);
 
         $data = [
             'categories' => $categories
@@ -30,7 +33,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
     /**
@@ -41,7 +44,17 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'=>'required|unique:categories|max:20',
+            'module'=>'required|max:20' 
+        ]);
+        $category = new Category;
+        $category->name = e($request->name);
+        $category->module = e($request->module);
+        $category->slug = Str::slug($request->name);
+        $category->save();
+
+        return redirect()->route('categories.index')->with('info','Agregado correctamente');
     }
 
     /**
