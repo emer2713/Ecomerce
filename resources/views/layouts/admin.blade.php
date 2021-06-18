@@ -224,6 +224,55 @@
               </li>
             </ul>
           </li>
+
+          {{-- Subcategorias    --}}
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Subcategorias 
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('subcategories.create')}}" class="nav-link">
+                  <i class="far fas fa-plus nav-icon"></i>
+                  <p>Crear</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('subcategories.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Lista</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          {{-- Tags    --}}
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+               Tags 
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('tags.create')}}" class="nav-link">
+                  <i class="far fas fa-plus nav-icon"></i>
+                  <p>Crear</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('tags.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Lista</p>
+                </a>
+              </li>
+            </ul>
+          </li>
           {{-- Programas   --}}
           {{--  <li class="nav-item has-treeview">
             <a href="#" class="nav-link">

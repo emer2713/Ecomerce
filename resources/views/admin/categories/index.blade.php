@@ -17,8 +17,8 @@
 
 		<ul class="nav nav-tabs">
 			@foreach (getModulesArray() as $module => $item)
-			<li class="nav-item">
-			 
+			<li class="nav-item">			 
+				<a class="nav-link " href="{{route('categories.module', $module)}}">{{$item}}</a>
             </li>
 			@endforeach
 		</ul>
