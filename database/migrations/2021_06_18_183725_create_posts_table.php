@@ -19,8 +19,8 @@ class CreatePostsTable extends Migration
             $table->unsignedBigInteger('category_id');
             $table->string('name');
             $table->string('slug')->unique();
-            $table->mediumText('abstract')->unique();
-            $table->text('body')->unique();
+            $table->mediumText('abstract');
+            $table->text('body');
             $table->enum('status',['PUBLISHED','DRAFT'])->default('DRAFT');
 
 
