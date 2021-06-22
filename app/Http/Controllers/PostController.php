@@ -60,7 +60,7 @@ class PostController extends Controller
             'abstract'=>'required|max:500',
             'body'=>'required',
             'status'=>'required',
-            'file' => 'requeired',
+            'file' => 'required',
             
         ]);
        
@@ -97,7 +97,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        $post = Post::where('id', $id)->with('category','user','image')->firstOrFail();
+        $post = Post::where('id', $id)->with('category','user','image','comments','comments.user')->firstOrFail();
         $categories = Category::orderBy('name','ASC')->pluck('name','id');
         $data = [
             'post' => $post,
@@ -125,7 +125,7 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $post = Post::where('module', 1)->where('id', $id)->firstOrFail();
+        $post = Post::where('id', $id)->firstOrFail();
         $categories = Category::orderBy('name','ASC')->pluck('name','id');
 
         $data = [

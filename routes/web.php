@@ -25,4 +25,11 @@ Route::resource('admin/subcategories','SubcategoryController')->names('subcatego
 Route::resource('admin/tags','TagController')->names('tags');
 Route::resource('admin/posts','PostController')->names('posts');
 
+Route::post('/comment/store','CommentController@store')->name('comment.add');
+Route::post('/reply/store','CommentController@replyStore')->name('reply.add');
+
+Route::delete('/reply/destroy/{comment}','CommentController@destroy')->name('comment.destroy');
+Route::get('/reply/{comment}/edit','CommentController@edit')->name('comment.edit');
+Route::put('/reply/{comment}','CommentController@update')->name('comment.update');
+
 
