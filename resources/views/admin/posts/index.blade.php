@@ -30,18 +30,18 @@
 					<td>{{$post->name}}</td>
 					<td>{{$post->abstract}}</td>
 					<td width="10px">
-						<a class="btn btn-warning" href="{{route('posts.show', $post->id)}}">
+						<a class="btn btn-default btn-sm" href="{{route('posts.show', $post->id)}}">
 							<i class="fas fa-eye"></i>
 						</a>
 					</td>
 					<td width="10px">
-						<a class="btn btn-info" href="{{route('posts.edit', $post->id)}}">
+						<a class="btn btn-default btn-sm" href="{{route('posts.edit', $post->id)}}">
 							<i class="fas fa-edit"></i>
 						</a>
 					</td>
 					<td width="10px">
 						{!! Form::open(['route'=>['posts.destroy',$post->id], 'method'=>'DELETE']) !!}
-						<button class="btn btn-danger">
+						<button class="btn btn-default btn-sm">
 							<i class="fas fa-trash-alt"></i>
 						</button>
 						{!! Form::close() !!}

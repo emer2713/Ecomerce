@@ -12,8 +12,8 @@
     <div class="form-group col">
         {!! Form::label('category_id','Imagen') !!}
         <div class="custom-file">
-            <input type="file" class="custom-file-input" name="file" lang="es">
-            <label class="custom-file-label" name="file">Seleccionar Archivo</label>
+            <input type="file" class="custom-file-input" name="image" lang="es">
+            <label class="custom-file-label" name="image">Seleccionar Archivo</label>
         </div>
         <small class="form-text text-muted">
             Solo archivos de imágenes de dimensiones 1200x490 px.
@@ -44,7 +44,7 @@
     </div>
 </div>
 @section('scripts')
-{!! Html::script('ckeditor/ckeditor.js') !!}
+{!! Html::script('vendor/ckeditor/ckeditor.js') !!}
 <script>
     CKEDITOR.replace('body');
 </script>

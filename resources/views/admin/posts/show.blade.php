@@ -47,6 +47,25 @@
               </div>
             </div>
           </div>
+
+          <!-- Comments Form -->
+          <div class="card my-4">
+            <h5 class="card-header">Deja un comentario:</h5>
+            <div class="card-body">
+              
+              {!! Form::open(['route'=>'comment.add', 'method'=>'POST']) !!}
+                <div class="form-group">
+                  <input type="hidden" name="post_id" value="{{$post->id}}">
+                  <textarea class="form-control" name="body" rows="3"></textarea>
+                </div>
+                
+                <input type="submit" class="btn btn-primary" value="Enviar">
+              {!! Form::close() !!}
+            </div>
+          </div>
+      
+      @include('admin.posts._replies',['comments'=>$post->comments, 'post_id'=>$post->id])
+      
 	</div>
 	<div class="card-footer">
       <a class="btn btn-primary" href="{{route('posts.index')}}">Regresar</a>
