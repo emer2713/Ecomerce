@@ -24,6 +24,8 @@ Route::get('admin/category/{module}','CategoryController@module')->name('categor
 Route::resource('admin/subcategories','SubcategoryController')->names('subcategories');
 Route::resource('admin/tags','TagController')->names('tags');
 Route::resource('admin/posts','PostController')->names('posts');
+Route::resource('admin/products','ProductController')->names('products');
+
 
 Route::post('/comment/store','CommentController@store')->name('comment.add');
 Route::post('/reply/store','CommentController@replyStore')->name('reply.add');
