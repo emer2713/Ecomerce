@@ -183,7 +183,7 @@ class PostController extends Controller
          $filename = rand(1,999).'-'.$name.'.'.$fileExt;
          $file_absolute = $upload_path.'/'.$path.'/'.$filename;
 
-         $post = new Post;
+         $post = Post::where('id', $id)->firstOrFail();
          $post->name = e($request->name);
          $post->user_id = e($request->user_id);
          $post->category_id = e($request->category_id);
