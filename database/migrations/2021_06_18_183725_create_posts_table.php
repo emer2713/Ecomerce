@@ -22,9 +22,10 @@ class CreatePostsTable extends Migration
             $table->mediumText('abstract');
             $table->text('body');
             $table->enum('status',['PUBLISHED','DRAFT'])->default('DRAFT');
+            $table->string('file_path');
+            $table->string('file');
 
 
-            
 
             $table->timestamps();
         });
