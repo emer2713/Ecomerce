@@ -35,7 +35,7 @@
                     <a class="texto-encima" href="{{$image->url}}"
                       v-on:click.prevent="eliminarimagen({{$image}})"
                       >
-                      <i class="fas fa-trash-alt" style="color: white"></i>
+                      <i class="fas fa-trash-alt" style="color: red"></i>
                     </a>
                   </div>
                   @endforeach

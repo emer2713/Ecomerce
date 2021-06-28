@@ -4,8 +4,6 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
-
 window.Vue = require('vue');
 
 /**
@@ -19,14 +17,36 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
+window.Vue = require('vue');
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-const app = new Vue({
-    el: '#app',
+const apiproduct = new Vue({
+    el: '#apiproduct',
+    methods: {
+        eliminarimagen(imagen) {
+            Swal.fire({
+                title: '¿Estas seguro de eliminar la imagen ' + imagen.id + '?',
+                text: "¡No podrás revertir esto!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: '¡Si, Eliminar!',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.value) {
+                    let url = '/api/eliminarimagen/' + imagen.id;
+                    axios.delete(url).then(response => {
+                        console.log(response.data);
+                    });
+                    var elemento = document.getElementById('idimagen-' + imagen.id);
+                    elemento.parentNode.removeChild(elemento);
+                    Swal.fire(
+                        '¡Eliminado!',
+                        'Su archivo ha sido eliminado.',
+                        'success'
+                    )
+                }
+            })
+        }
+    }
 });
