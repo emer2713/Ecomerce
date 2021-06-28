@@ -6,4 +6,14 @@
         ];
         return $a;
     }
+
+    function getStatesArray(){
+        $a = [
+            "0" => 'Descuento',
+            "1" => 'Nuevo',
+            "2" => 'Oferta',
+            "3" => 'Rebaja',
+        ];
+        return $a;
+    }
 ?>  

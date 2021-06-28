@@ -30,6 +30,9 @@ Route::resource('admin/products','ProductController')->names('products');
 Route::post('/comment/store','CommentController@store')->name('comment.add');
 Route::post('/reply/store','CommentController@replyStore')->name('reply.add');
 
+Route::post('/commentProduct/store','CommentController@productStore')->name('productComment.add');
+Route::post('/replyProduct/store','CommentController@productReplyStore')->name('productReply.add');
+
 Route::delete('/reply/destroy/{comment}','CommentController@destroy')->name('comment.destroy');
 Route::get('/reply/{comment}/edit','CommentController@edit')->name('comment.edit');
 Route::put('/reply/{comment}','CommentController@update')->name('comment.update');

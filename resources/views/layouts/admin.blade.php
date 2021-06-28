@@ -13,13 +13,14 @@
   <!-- Font Awesome -->
   {!! Html::style('adminlte/plugins/fontawesome-free/css/all.min.css') !!}
   <!-- Ionicons -->
-  {!! Html::style('adminlte//plugins/ekko-lightbox/ekko-lightbox.css') !!}
+  {!! Html::style('adminlte/plugins/ekko-lightbox/ekko-lightbox.css') !!}
 
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- overlayScrollbars -->
   {!! Html::style('adminlte/dist/css/adminlte.min.css') !!}
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  @yield('style');
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
@@ -455,5 +456,21 @@
 {!! Html::script('adminlte/dist/js/demo.js') !!}
 {!! Html::script('adminlte/plugins/filterizr/jquery.filterizr.min.js') !!}
 @yield('scripts') 
+<script>
+  $(function () {
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+      event.preventDefault();
+      $(this).ekkoLightbox({
+        alwaysShowClose: true
+      });
+    });
+
+    $('.filter-container').filterizr({gutterPixels: 3});
+    $('.btn[data-filter]').on('click', function() {
+      $('.btn[data-filter]').removeClass('active');
+      $(this).addClass('active');
+    });
+  })
+</script>
 </body>
 </html>

@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('slug');
             $table->bigInteger('stock');
-            $table->bigInteger('quantity',);
+            $table->bigInteger('quantity')->nullable();
             $table->decimal('actualPrice',12,2);
             $table->decimal('previousPrice',12,2);
             $table->integer('discountRate');

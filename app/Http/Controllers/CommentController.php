@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Comment;
 use App\Post;
+use App\Product;
 use App\User;
 
 
@@ -15,7 +16,39 @@ use Illuminate\Support\Facades\Validator;
 
 class CommentController extends Controller
 {
-    
+    public function productStore(Request $request)
+    {
+        $request->validate([
+           
+            'body'=>'required'
+            
+         ]);
+        $comment = new Comment();
+        $comment->body = $request->body;
+        $comment->user()->associate($request->user());
+        $product =Product::find($request->product_id);
+        $product->comments()->save($comment);
+        
+        return back()->with('info','El comentario esta siendo evaluado.');
+    }
+
+    public function productReplyStore(Request $request)
+    {
+        $request->validate([
+           
+            'body'=>'required'
+            
+         ]);
+        $reply = new Comment();
+        $reply->body = $request->get('body');
+        $reply->user()->associate($request->user());
+        $reply->parent_id = $request->get('comment_id');    
+
+        $product =Product::find($request->get('product_id'));
+        $product->comments()->save($reply);
+        
+        return back()->with('info','El comentario esta siendo evaluado.');
+    }
    
     public function store(Request $request)
     {
