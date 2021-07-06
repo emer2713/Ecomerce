@@ -9,6 +9,7 @@ use App\Post;
 use App\Carousel;
 use App\Tag;
 use App\Social;
+use App\Subcategory;
 
 class WebController extends Controller
 {
@@ -36,7 +37,7 @@ class WebController extends Controller
 
         $tags=Tag::get();
 
-        //$carousels=Carousel::orderBy('id','DESC')->get()->take(3);
+        $carousels=Carousel::orderBy('id','DESC')->get()->take(3);
         //$socials=Social::orderBy('id','DESC')->get();
 
        // return view('web.index', compact('socials','carousels','tags','specialDeals','specialOffers','hotDeals','latestBlogs','category','productsCategory','productsFeatured','productsNew'));
@@ -47,8 +48,8 @@ class WebController extends Controller
            'productsNew' => $productsNew,
            'latestBlogs' => $latestBlogs,
            'hotDeals' => $hotDeals,
-           'tags' => $tags
-           
+           'tags' => $tags,
+           'carousels' => $carousels  
        ];
 
        //dd($latestBlogs);
@@ -67,9 +68,32 @@ class WebController extends Controller
     {
         return view('web.blog');
     }
-    public function category()
+    public function category($slug)
     {
-        return view('web.category');
+        $tags = Tag::get();
+        $subcategory = Subcategory::where('slug', $slug)->firstOrFail();
+        $products = Product::where('subcategory_id', $subcategory->id)->get();
+
+        $data = [
+            'products' => $products,
+            'tags' => $tags
+
+        ]; 
+        return view('web.category', $data);
+    }
+
+    public function tags($slug)
+    {
+        $tags = Tag::get();
+        $subcategory = Subcategory::where('slug', $slug)->firstOrFail();
+        $products = Product::where('subcategory_id', $subcategory->id)->get();
+
+        $data = [
+            'products' => $products,
+            'tags'=> $tags
+
+        ]; 
+        return view('web.category', $data);
     }
     public function checkout()
     {
