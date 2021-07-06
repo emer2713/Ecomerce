@@ -3,19 +3,27 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Category extends Model
 {
+    use SoftDeletes;
     protected $fillable = [
-        'name', 'module', 'slug',
+        'name', 'module', 'slug','icon','front',
     ];
+    protected $dates = ['deleted_at'];
+    protected $hidden = ['created_at','updated_at'];
     public function subcategories(){
-        return $this->hasmany(Subcategory::class);
+        return $this->hasMany(Subcategory::class);
     }
     public function tags(){
-        return $this->hasmany(Tag::class);
+        return $this->hasMany(Tag::class);
     }
     public function posts(){
-        return $this->hasmany(Post::class);
+        return $this->hasMany(Post::class);
+    }
+    public function image()
+    {
+        return $this->morphOne('App\Image', 'imageable');
     }
 }
