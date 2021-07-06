@@ -26,4 +26,9 @@ class Product extends Model
         return $this->morphMany(Comment::class, 'commentable')->whereNull('parent_id')->orderBy('id','DESC');
 
     }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
 }
