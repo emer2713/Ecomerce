@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Subcategory;
-class SubcategorySeeder extends Seeder
+use App\Image;
+
+class ImagesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +12,6 @@ class SubcategorySeeder extends Seeder
      */
     public function run()
     {
-        factory(Subcategory::class, 25)->create();
-
+        factory(Image::class, 500)->create();
     }
 }
