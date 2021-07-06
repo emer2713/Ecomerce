@@ -15,7 +15,7 @@
 	<div class="card-body ">
     @include('admin.posts.form.form')
     <div class="card bg-dark text-white">
-      <img class="card-img" src="{{ url('/multimedia/'.$post->file_path.'/'.$post->file) }}" alt="Card image">
+      <img class="card-img" src="{{$post->image->url}}" alt="Card image">
       <div class="card-img-overlay">
         <h5 class="card-title">Imagen de publicación</h5>
       </div>

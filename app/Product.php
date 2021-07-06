@@ -12,7 +12,7 @@ class Product extends Model
 
 
     public function images(){
-        return $this->morphMany('App\image', 'imageable');
+        return $this->morphMany('App\Image', 'imageable');
     }
 
     public function subcategory(){

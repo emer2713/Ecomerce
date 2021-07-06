@@ -1,30 +1,29 @@
-
 {!! Form::hidden('user_id', auth()->user()->id) !!}
-<div class="form-group">
+<div class="form-group"> 
     {!! Form::label('name','Titulo') !!}
-    {!! Form::text('name', null, ['class'=>'form-control', 'id'=>'name']) !!}
+    {!! Form::text('name', null, ['class'=>'form-control']) !!}
 </div>
 <div class="form-row">
     <div class="form-group col">
-        {!! Form::label('category_id','Categorias') !!}
-        {!! Form::select('category_id', $categories , null, ['class'=>'form-control'] ) !!}
-    </div>
-    <div class="form-group col">
-        {!! Form::label('file','Imagen') !!}
+        {!! Form::label('category_id','Imagen') !!}
         <div class="custom-file">
-            <input type="file" class="custom-file-input" name="file" lang="es">
-            <label class="custom-file-label" name="file">Seleccionar Archivo</label>
+            <input type="file" class="custom-file-input" name="image" lang="es">
+            <label class="custom-file-label" name="image">Seleccionar Archivo</label>
         </div>
         <small class="form-text text-muted">
             Solo archivos de imágenes de dimensiones 1200x490 px.
         </small>
+    </div>
+    <div class="form-group col">
+        {!! Form::label('category_id','Categorias') !!}
+        {!! Form::select('category_id', $categories , null, ['class'=>'form-control'] ) !!}
     </div>
 </div>
 <div class="form-group">
     {!! Form::label('abstract','Resumen') !!}
     {!! Form::textarea('abstract', null, ['class'=>'form-control', 'rows'=>'3']) !!}
 </div>
-<div class="form-group">
+<div class="form-group"> 
     {!! Form::label('body','Contenido') !!}
     {!! Form::textarea('body', null, ['class'=>'form-control']) !!}
 </div>

@@ -13,7 +13,8 @@
               <li class="active dropdown"> <a href="home.html">Home</a> </li>
 
             @foreach ($categorias as $categoria)
-            <li class="dropdown yamm mega-menu"> 
+              @if ($categoria->front == 'YES')
+              <li class="dropdown yamm mega-menu"> 
                 <a href="home.html" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">{{$categoria->name}}</a>
             <ul class="dropdown-menu container">
                 <li>
@@ -36,6 +37,8 @@
                 </li>
             </ul>
             </li>
+              @endif
+                
             @endforeach
               
             </ul>

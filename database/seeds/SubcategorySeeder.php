@@ -2,7 +2,9 @@
 
 use Illuminate\Database\Seeder;
 use App\Subcategory;
-class SubSubcategorySeeder extends Seeder
+
+
+class SubcategorySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,5 +14,6 @@ class SubSubcategorySeeder extends Seeder
     public function run()
     {
         factory(Subcategory::class, 25)->create();
+
     }
 }
