@@ -13,7 +13,10 @@
             "1" => 'Nuevo',
             "2" => 'Oferta',
             "3" => 'Rebaja',
+            "4" => 'Destacado',
+
         ];
+
         return $a;
     }
 ?>  
