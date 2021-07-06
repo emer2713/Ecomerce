@@ -11,7 +11,7 @@ $factory->define(Product::class, function (Faker $faker) {
     $slug = Str::slug($title);
     $price0 =rand(100,2000);
     return [
-        'subcategory_id' 	=> rand(1,10),
+        'subcategory_id' 	=> rand(1,25),
         'name' 			=> $title,
         'slug' 			=> $slug,
         'stock' 	    => rand(1,100),

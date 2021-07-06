@@ -15,18 +15,18 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('subcategory_id');
-            $table->string('name');
-            $table->string('slug');
-            $table->bigInteger('stock');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->unsignedBigInteger('subcategory_id')->nullable();
+            $table->string('name')->nullable();
+            $table->string('slug')->nullable();
+            $table->bigInteger('stock')->nullable();
             $table->bigInteger('quantity')->nullable();
-            $table->decimal('actualPrice',12,2);
-            $table->decimal('previousPrice',12,2);
-            $table->integer('discountRate');
-            $table->text('shortDescription');
-            $table->text('longDescription');
-            $table->string('state');
+            $table->decimal('actualPrice',12,2)->nullable();
+            $table->decimal('previousPrice',12,2)->nullable();
+            $table->integer('discountRate')->nullable();
+            $table->text('shortDescription')->nullable();
+            $table->text('longDescription')->nullable();
+            $table->string('state')->nullable();
             $table->enum('status',['PUBLISHED','DRAFT'])->default('DRAFT');
 
             $table->timestamps();

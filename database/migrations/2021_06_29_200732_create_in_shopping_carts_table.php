@@ -15,8 +15,8 @@ class CreateInShoppingCartsTable extends Migration
     {
         Schema::create('in_shopping_carts', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('product_id');
-            $table->unsignedBigInteger('shopping_cart');
+            $table->unsignedBigInteger('product_id')->nullable();
+            $table->unsignedBigInteger('shopping_cart')->nullable();
             $table->timestamps();
         });
     }

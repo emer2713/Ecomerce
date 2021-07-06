@@ -15,15 +15,16 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('category_id');
-            $table->string('name');
-            $table->string('slug')->unique();
-            $table->mediumText('abstract');
-            $table->text('body');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->unsignedBigInteger('category_id')->nullable();
+            $table->string('name')->nullable();
+            $table->string('slug')->unique()->nullable();
+            $table->mediumText('abstract')->nullable();
+            $table->text('body')->nullable();
             $table->enum('status',['PUBLISHED','DRAFT'])->default('DRAFT');
-            $table->string('file_path');
-            $table->string('file');
+            $table->string('file_path')->nullable();
+            $table->string('file_name')->nullable();
+            $table->string('file')->nullable();
 
 
 

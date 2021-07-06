@@ -15,11 +15,11 @@ class CreateCategoriesTable extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('module');
-            $table->string('slug');
-            $table->string('icon');
-            $table->enum('front',['YES','NO'])->default('NO'); 
+            $table->string('name')->nullable();
+            $table->string('module')->nullable();
+            $table->string('slug')->nullable();
+            $table->string('icon')->nullable();
+            $table->enum('front',['YES','NO'])->default('NO');
             $table->softDeletes();
             $table->timestamps();
         });
