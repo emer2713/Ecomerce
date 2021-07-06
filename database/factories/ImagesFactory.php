@@ -7,7 +7,8 @@ use Faker\Generator as Faker;
 
 $factory->define(Image::class, function (Faker $faker) {
     return [
-        'url' => $faker->imageUrl('/images/', $width = 1200, $height = 400),
-        'imageable' => rand(1,100)
+        'url' => rand('/images/1.png','/images/2.png','/images/3.png'),
+        'imageable_type' => 'App\Product',
+        'imageable_id' => rand(1,100)
     ];
 });
