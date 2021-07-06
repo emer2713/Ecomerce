@@ -20,7 +20,6 @@ $factory->define(Product::class, function (Faker $faker) {
         'discountRate'         => '0',
         'shortDescription' 			=> $faker->text(500),
         'longDescription' 			=> $faker->text(500),
-        'image' 			=> $faker->images()->imageUrl($width = 1200, $height = 400),
         'status'        => $faker->randomElement(['DRAFT', 'PUBLISHED']),
         'state'  => rand(1,4),
 
