@@ -3,30 +3,29 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
+   // use SoftDeletes; 
     protected $fillable = [
-        'name', 'abstract', 'slug','user_id','body','status','category_id'
+        'user_id','category_id','name','slug','abstract','body','status',
     ];
-    public function image(){
-        return $this->morphOne('App\image', 'imageable');
-    }
+   // protected $dates = ['deleted_at'];
 
-    public function category(){
-        return $this->belongsTo(Category::class);
+    public function image()
+    {
+        return $this->morphOne('App\Image', 'imageable');
     }
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
-
-    public function comments(){
-        return $this->morphMany(Comment::class, 'commentable')->whereNull('parent_id');
-
-    }
-
-    public function tags()
+    public function category()
     {
-        return $this->belongsToMany(Tag::class);
+        return $this->belongsTo(Category::class);
+    }
+    public function comments(){
+        return $this->morphMany(Comment::class, 'commentable')->whereNull('parent_id')->orderBy('id','DESC');
     }
 }

@@ -12,5 +12,6 @@ class SubcategorySeeder extends Seeder
     public function run()
     {
         factory(Subcategory::class, 25)->create();
+
     }
 }

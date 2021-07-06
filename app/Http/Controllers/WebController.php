@@ -25,12 +25,12 @@ class WebController extends Controller
 
         $productsFeatured =Product::where('status','PUBLISHED')->where('state',4)->with('images')->get()->take(6);
 
-       /* $productsNew =Product::where('status','PUBLISHED')->orderBy('id','DESC')->with('images')->get()->take(6);
-        $latestBlogs =Post::where('status','PUBLISHED')->orderBy('id','DESC')->with('image','user')->get()->take(5);
+        $productsNew =Product::where('status','PUBLISHED')->orderBy('id','DESC')->with('images')->get()->take(6);
+         $latestBlogs =Post::where('status','PUBLISHED')->orderBy('id','DESC')->get()->take(5);
         
         $hotDeals =Product::where('status','PUBLISHED')->orderBy('previousPrice','DESC')->with('images')->get()->take(3);
         
-        $specialOffers=Product::where('status','PUBLISHED')->where('state',5)->with('images')->get()->take(9);
+        /*$specialOffers=Product::where('status','PUBLISHED')->where('state',5)->with('images')->get()->take(9);
         
         $specialDeals=Product::where('status','PUBLISHED')->where('state',6)->with('images')->get()->take(9);
 
@@ -43,9 +43,14 @@ class WebController extends Controller
        $data = [
            'category' => $category,
            'productsCategory' => $productsCategory,
-           'productsFeatured' => $productsFeatured
+           'productsFeatured' => $productsFeatured,
+           'productsNew' => $productsNew,
+           'latestBlogs' => $latestBlogs,
+           'hotDeals' => $hotDeals
            
        ];
+
+       //dd($latestBlogs);
        return view('web.index', $data);
 
     }
