@@ -1,14 +1,13 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-
+use App\Image;
 
 use Faker\Generator as Faker;
 
-$factory->define(Model::class, function (Faker $faker) {
+$factory->define(Image::class, function (Faker $faker) {
     return [
-        'url' => rand('/images/1.png','/images/2.png'),
-        'imageable_id' => 'App\Prodcut',
-        'imageable_id' => rand(1,100)
+        'url' => $faker->imageUrl('/images/', $width = 1200, $height = 400),
+        'imageable' => rand(1,100)
     ];
 });
