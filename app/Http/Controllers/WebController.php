@@ -30,11 +30,11 @@ class WebController extends Controller
         
         $hotDeals =Product::where('status','PUBLISHED')->orderBy('previousPrice','DESC')->with('images')->get()->take(3);
         
-        /*$specialOffers=Product::where('status','PUBLISHED')->where('state',5)->with('images')->get()->take(9);
+        //$specialOffers=Product::where('status','PUBLISHED')->where('state',5)->with('images')->get()->take(9);
         
-        $specialDeals=Product::where('status','PUBLISHED')->where('state',6)->with('images')->get()->take(9);
+        //$specialDeals=Product::where('status','PUBLISHED')->where('state',6)->with('images')->get()->take(9);
 
-        $tags=Tag::get();*/
+        $tags=Tag::get();
 
         //$carousels=Carousel::orderBy('id','DESC')->get()->take(3);
         //$socials=Social::orderBy('id','DESC')->get();
@@ -46,7 +46,8 @@ class WebController extends Controller
            'productsFeatured' => $productsFeatured,
            'productsNew' => $productsNew,
            'latestBlogs' => $latestBlogs,
-           'hotDeals' => $hotDeals
+           'hotDeals' => $hotDeals,
+           'tags' => $tags
            
        ];
 
