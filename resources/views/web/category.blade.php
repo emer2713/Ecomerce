@@ -1,7 +1,5 @@
 @extends('layouts.web')
 @section('content')
-    
-<!-- ============================================== HEADER : END ============================================== -->
 <div class="breadcrumb">
   <div class="container">
     <div class="breadcrumb-inner">
@@ -10,18 +8,19 @@
         <li class='active'>Handbags</li>
       </ul>
     </div>
-    <!-- /.breadcrumb-inner --> 
+    <!-- /.breadcrumb-inner -->
   </div>
-  <!-- /.container --> 
+  <!-- /.container -->
 </div>
 <!-- /.breadcrumb -->
+
 <div class="body-content outer-top-xs">
   <div class='container'>
     <div class='row'>
-      <div class='col-xs-12 col-sm-12 col-md-3 sidebar'> 
+      <div class='col-xs-12 col-sm-12 col-md-3 sidebar'>
         @include('web._categories')
         <div class="sidebar-module-container">
-          <div class="sidebar-filter"> 
+          <div class="sidebar-filter">
             <!-- ============================================== SIDEBAR CATEGORY ============================================== -->
             <div class="sidebar-widget">
               <h3 class="section-title">Shop by</h3>
@@ -42,12 +41,12 @@
                           <li><a href="#">for women</a></li>
                         </ul>
                       </div>
-                      <!-- /.accordion-inner --> 
+                      <!-- /.accordion-inner -->
                     </div>
-                    <!-- /.accordion-body --> 
+                    <!-- /.accordion-body -->
                   </div>
                   <!-- /.accordion-group -->
-                  
+
                   <div class="accordion-group">
                     <div class="accordion-heading"> <a href="#collapseTwo" data-toggle="collapse" class="accordion-toggle collapsed"> Desktops </a> </div>
                     <!-- /.accordion-heading -->
@@ -60,12 +59,12 @@
                           <li><a href="#">for women</a></li>
                         </ul>
                       </div>
-                      <!-- /.accordion-inner --> 
+                      <!-- /.accordion-inner -->
                     </div>
-                    <!-- /.accordion-body --> 
+                    <!-- /.accordion-body -->
                   </div>
                   <!-- /.accordion-group -->
-                  
+
                   <div class="accordion-group">
                     <div class="accordion-heading"> <a href="#collapseThree" data-toggle="collapse" class="accordion-toggle collapsed"> Pants </a> </div>
                     <!-- /.accordion-heading -->
@@ -78,12 +77,12 @@
                           <li><a href="#">for women</a></li>
                         </ul>
                       </div>
-                      <!-- /.accordion-inner --> 
+                      <!-- /.accordion-inner -->
                     </div>
-                    <!-- /.accordion-body --> 
+                    <!-- /.accordion-body -->
                   </div>
                   <!-- /.accordion-group -->
-                  
+
                   <div class="accordion-group">
                     <div class="accordion-heading"> <a href="#collapseFour" data-toggle="collapse" class="accordion-toggle collapsed"> Bags </a> </div>
                     <!-- /.accordion-heading -->
@@ -96,12 +95,12 @@
                           <li><a href="#">for women</a></li>
                         </ul>
                       </div>
-                      <!-- /.accordion-inner --> 
+                      <!-- /.accordion-inner -->
                     </div>
-                    <!-- /.accordion-body --> 
+                    <!-- /.accordion-body -->
                   </div>
                   <!-- /.accordion-group -->
-                  
+
                   <div class="accordion-group">
                     <div class="accordion-heading"> <a href="#collapseFive" data-toggle="collapse" class="accordion-toggle collapsed"> Hats </a> </div>
                     <!-- /.accordion-heading -->
@@ -114,12 +113,12 @@
                           <li><a href="#">for women</a></li>
                         </ul>
                       </div>
-                      <!-- /.accordion-inner --> 
+                      <!-- /.accordion-inner -->
                     </div>
-                    <!-- /.accordion-body --> 
+                    <!-- /.accordion-body -->
                   </div>
                   <!-- /.accordion-group -->
-                  
+
                   <div class="accordion-group">
                     <div class="accordion-heading"> <a href="#collapseSix" data-toggle="collapse" class="accordion-toggle collapsed"> Accessories </a> </div>
                     <!-- /.accordion-heading -->
@@ -132,20 +131,20 @@
                           <li><a href="#">for women</a></li>
                         </ul>
                       </div>
-                      <!-- /.accordion-inner --> 
+                      <!-- /.accordion-inner -->
                     </div>
-                    <!-- /.accordion-body --> 
+                    <!-- /.accordion-body -->
                   </div>
-                  <!-- /.accordion-group --> 
-                  
+                  <!-- /.accordion-group -->
+
                 </div>
-                <!-- /.accordion --> 
+                <!-- /.accordion -->
               </div>
-              <!-- /.sidebar-widget-body --> 
+              <!-- /.sidebar-widget-body -->
             </div>
-            <!-- /.sidebar-widget --> 
-            <!-- ============================================== SIDEBAR CATEGORY : END ============================================== --> 
-            
+            <!-- /.sidebar-widget -->
+            <!-- ============================================== SIDEBAR CATEGORY : END ============================================== -->
+
             <!-- ============================================== PRICE SILDER============================================== -->
             <div class="sidebar-widget">
               <div class="widget-header">
@@ -156,12 +155,12 @@
                   <input type="text" id="amount" style="border:0; color:#666666; font-weight:bold;text-align:center;">
                   <input type="text" class="price-slider" value="" >
                 </div>
-                <!-- /.price-range-holder --> 
+                <!-- /.price-range-holder -->
                 <a href="#" class="lnk btn btn-primary">Show Now</a> </div>
-              <!-- /.sidebar-widget-body --> 
+              <!-- /.sidebar-widget-body -->
             </div>
-            <!-- /.sidebar-widget --> 
-            <!-- ============================================== PRICE SILDER : END ============================================== --> 
+            <!-- /.sidebar-widget -->
+            <!-- ============================================== PRICE SILDER : END ============================================== -->
             <!-- ============================================== MANUFACTURES============================================== -->
             <div class="sidebar-widget">
               <div class="widget-header">
@@ -176,12 +175,12 @@
                   <li><a href="#">Chanel</a></li>
                   <li><a href="#">Other Brand</a></li>
                 </ul>
-                <!--<a href="#" class="lnk btn btn-primary">Show Now</a>--> 
+                <!--<a href="#" class="lnk btn btn-primary">Show Now</a>-->
               </div>
-              <!-- /.sidebar-widget-body --> 
+              <!-- /.sidebar-widget-body -->
             </div>
-            <!-- /.sidebar-widget --> 
-            <!-- ============================================== MANUFACTURES: END ============================================== --> 
+            <!-- /.sidebar-widget -->
+            <!-- ============================================== MANUFACTURES: END ============================================== -->
             <!-- ============================================== COLOR============================================== -->
             <div class="sidebar-widget">
               <div class="widget-header">
@@ -197,10 +196,10 @@
                   <li><a href="#">Teal</a></li>
                 </ul>
               </div>
-              <!-- /.sidebar-widget-body --> 
+              <!-- /.sidebar-widget-body -->
             </div>
-            <!-- /.sidebar-widget --> 
-            <!-- ============================================== COLOR: END ============================================== --> 
+            <!-- /.sidebar-widget -->
+            <!-- ============================================== COLOR: END ============================================== -->
             <!-- ============================================== COMPARE============================================== -->
             <div class="sidebar-widget outer-top-vs">
               <h3 class="section-title">Compare products</h3>
@@ -208,15 +207,15 @@
                 <div class="compare-report">
                   <p>You have no <span>item(s)</span> to compare</p>
                 </div>
-                <!-- /.compare-report --> 
+                <!-- /.compare-report -->
               </div>
-              <!-- /.sidebar-widget-body --> 
+              <!-- /.sidebar-widget-body -->
             </div>
-            <!-- /.sidebar-widget --> 
-            <!-- ============================================== COMPARE: END ============================================== --> 
+            <!-- /.sidebar-widget -->
+            <!-- ============================================== COMPARE: END ============================================== -->
             <!-- ============================================== PRODUCT TAGS ============================================== -->
             @include('web._product-tag')
-            <!-- /.sidebar-widget --> 
+            <!-- /.sidebar-widget -->
           <!-- /.Testimonials -->
             <div class="sidebar-widget  outer-top-vs ">
               <div id="advertisement" class="advertisement">
@@ -224,31 +223,31 @@
                   <div class="avatar"><img src="marazzo/assets/images/testimonials/member1.png" alt="Image"></div>
                   <div class="testimonials"><em>"</em> Vtae sodales aliq uam morbi non sem lacus port mollis. Nunc condime tum metus eud molest sed consectetuer. Sed quia non numquam eius modi tempora incidunt ut labore et dolore.<em>"</em></div>
                   <div class="clients_author">John Doe <span>Abc Company</span> </div>
-                  <!-- /.container-fluid --> 
+                  <!-- /.container-fluid -->
                 </div>
                 <!-- /.item -->
-                
+
                 <div class="item">
                   <div class="avatar"><img src="marazzo/assets/images/testimonials/member3.png" alt="Image"></div>
                   <div class="testimonials"><em>"</em>Vtae sodales aliq uam morbi non sem lacus port mollis. Nunc condime tum metus eud molest sed consectetuer. Sed quia non numquam eius modi tempora incidunt ut labore et dolore.<em>"</em></div>
                   <div class="clients_author">Stephen Doe <span>Xperia Designs</span> </div>
                 </div>
                 <!-- /.item -->
-                
+
                 <div class="item">
                   <div class="avatar"><img src="marazzo/assets/images/testimonials/member2.png" alt="Image"></div>
                   <div class="testimonials"><em>"</em> Vtae sodales aliq uam morbi non sem lacus port mollis. Nunc condime tum metus eud molest sed consectetuer. Sed quia non numquam eius modi tempora incidunt ut labore et dolore.<em>"</em></div>
                   <div class="clients_author">Saraha Smith <span>Datsun &amp; Co</span> </div>
-                  <!-- /.container-fluid --> 
+                  <!-- /.container-fluid -->
                 </div>
-                <!-- /.item --> 
-                
+                <!-- /.item -->
+
               </div>
-              <!-- /.owl-carousel --> 
+              <!-- /.owl-carousel -->
             </div>
-            
+
             <!-- ============================================== Testimonials: END ============================================== -->
-            
+
              <!-- ============================================== NEWSLETTER ============================================== -->
         <div class="sidebar-widget newsletter outer-bottom-small  outer-top-vs">
           <h3 class="section-title">Newsletters</h3>
@@ -262,21 +261,21 @@
               <button class="btn btn-primary">Subscribe</button>
             </form>
           </div>
-          <!-- /.sidebar-widget-body --> 
+          <!-- /.sidebar-widget-body -->
         </div>
-        <!-- /.sidebar-widget --> 
-        <!-- ============================================== NEWSLETTER: END ============================================== --> 
-            
-           
+        <!-- /.sidebar-widget -->
+        <!-- ============================================== NEWSLETTER: END ============================================== -->
+
+
           </div>
-          <!-- /.sidebar-filter --> 
+          <!-- /.sidebar-filter -->
         </div>
-        <!-- /.sidebar-module-container --> 
+        <!-- /.sidebar-module-container -->
       </div>
       <!-- /.sidebar -->
-      <div class="col-xs-12 col-sm-12 col-md-9 rht-col"> 
+      <div class="col-xs-12 col-sm-12 col-md-9 rht-col">
         <!-- ========================================== SECTION – HERO ========================================= -->
-        
+
         <div id="category" class="category-carousel hidden-xs">
           <div class="item">
             <div class="image"> <img src="marazzo/assets/images/banners/cat-banner-1.jpg" alt="" class="img-responsive"> </div>
@@ -287,13 +286,13 @@
                 <div class="excerpt-normal hidden-sm hidden-md"> Lorem ipsum dolor sit amet, consectetur adipiscing elit </div>
                 <div class="buy-btn"><a href="#" class="lnk btn btn-primary">Show Now</a></div>
               </div>
-              <!-- /.caption --> 
+              <!-- /.caption -->
             </div>
-            <!-- /.container-fluid --> 
+            <!-- /.container-fluid -->
           </div>
         </div>
-        
-     
+
+
         <div class="clearfix filters-container m-t-10">
           <div class="row">
             <div class="col col-sm-6 col-md-3 col-lg-3 col-xs-6">
@@ -303,7 +302,7 @@
                   <li><a data-toggle="tab" href="#list-container"><i class="icon fa fa-bars"></i>List</a></li>
                 </ul>
               </div>
-              <!-- /.filter-tabs --> 
+              <!-- /.filter-tabs -->
             </div>
             <!-- /.col -->
             <div class="col col-sm-12 col-md-5 col-lg-5 hidden-sm">
@@ -320,9 +319,9 @@
                       </ul>
                     </div>
                   </div>
-                  <!-- /.fld --> 
+                  <!-- /.fld -->
                 </div>
-                <!-- /.lbl-cnt --> 
+                <!-- /.lbl-cnt -->
               </div>
               <!-- /.col -->
               <div class="col col-sm-6 col-md-6 no-padding hidden-sm hidden-md">
@@ -344,11 +343,11 @@
                       </ul>
                     </div>
                   </div>
-                  <!-- /.fld --> 
+                  <!-- /.fld -->
                 </div>
-                <!-- /.lbl-cnt --> 
+                <!-- /.lbl-cnt -->
               </div>
-              <!-- /.col --> 
+              <!-- /.col -->
             </div>
             <!-- /.col -->
             <div class="col col-sm-6 col-md-4 col-xs-6 col-lg-4 text-right">
@@ -361,12 +360,12 @@
                   <li><a href="#">4</a></li>
                   <li class="next"><a href="#"><i class="fa fa-angle-right"></i></a></li>
                 </ul>
-                <!-- /.list-inline --> 
+                <!-- /.list-inline -->
               </div>
               <!-- /.pagination-container --> </div>
-            <!-- /.col --> 
+            <!-- /.col -->
           </div>
-          <!-- /.row --> 
+          <!-- /.row -->
         </div>
         <div class="search-result-container ">
           <div id="myTabContent" class="tab-content category-list">
@@ -379,26 +378,26 @@
                       <div class="products">
                         <div class="product">
                           <div class="product-image">
-                            <div class="image"> 
+                            <div class="image">
                               <a href="detail.html">
                                 @foreach ($product->images->slice(0, 2) as $image)
-                                <img src="{{$image->url}}" class="{{ $loop->first ? '' : 'hover-image' }}" alt=""> 
+                                <img src="{{$image->url}}" class="{{ $loop->first ? '' : 'hover-image' }}" alt="">
                                 @endforeach
                               </a>
                         </div>
                             <!-- /.image -->
-                            
+
                             <div class="tag new"><span>{{ $product->state }}</span></div>
                           </div>
                           <!-- /.product-image -->
-                          
+
                           <div class="product-info text-left">
                             <h3 class="name"><a href="detail.html">{{ $product->name }}</a></h3>
                             <div class="rating rateit-small"></div>
                             <div class="description"></div>
                             <div class="product-price"> <span class="price"> ${{$product->previousPrice}}  </span> <span class="price-before-discount">$ {{$product->actualPrice}}</span> </div>
-                            <!-- /.product-price --> 
-                            
+                            <!-- /.product-price -->
+
                           </div>
                           <!-- /.product-info -->
                           <div class="cart clearfix animate-effect">
@@ -412,44 +411,46 @@
                                 <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal"></i> </a> </li>
                               </ul>
                             </div>
-                            <!-- /.action --> 
+                            <!-- /.action -->
                           </div>
-                          <!-- /.cart --> 
+                          <!-- /.cart -->
                         </div>
-                        <!-- /.product --> 
-                        
+                        <!-- /.product -->
+
                       </div>
-                      <!-- /.products --> 
+                      <!-- /.products -->
                       </div>
                     </div>
-                    <!-- /.item --> 
+                    <!-- /.item -->
                   @endforeach
                 </div>
-                <!-- /.row --> 
+                <!-- /.row -->
               </div>
-              <!-- /.category-product --> 
-              
+              <!-- /.category-product -->
+
             </div>
-            <!-- /.tab-pane--> 
+            <!-- /.tab-pane-->
 
         </div>
-        <!-- /.search-result-container --> 
-        
+        <!-- /.search-result-container -->
+
       </div>
-      <!-- /.col --> 
+      <!-- /.col -->
     </div>
-    <!-- /.row --> 
-    <!-- ============================================== BRANDS CAROUSEL ==============================================--> 
+    <!-- /.row -->
+    <!-- ============================================== BRANDS CAROUSEL ==============================================-->
     <!-- ============================================== BRANDS CAROUSEL : END ============================================== --> </div>
-  <!-- /.container --> 
-  
+  <!-- /.container -->
+
 </div>
-<!-- /.body-content --> 
+<!-- /.body-content -->
+
+
 <!-- ============================================================= FOOTER ============================================================= -->
 
         <!-- ============================================== INFO BOXES ============================================== -->
-        <div class="row our-features-box">
-     <div class="container">
+  <div class="row our-features-box">
+    <div class="container">
       <ul>
         <li>
           <div class="feature-box">
@@ -460,7 +461,7 @@
         <li>
           <div class="feature-box">
             <div class="icon-support"></div>
-            <div class="content-blocks">call 
+            <div class="content-blocks">call
               +1 800 789 0000</div>
           </div>
         </li>
@@ -476,11 +477,11 @@
             <div class="content">30 days return</div>
           </div>
         </li>
-        
+
       </ul>
     </div>
   </div>
-        <!-- /.info-boxes --> 
-        <!-- ============================================== INFO BOXES : END ============================================== --> 
+        <!-- /.info-boxes -->
+        <!-- ============================================== INFO BOXES : END ============================================== -->
 
 @endsection

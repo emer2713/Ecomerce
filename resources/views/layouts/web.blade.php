@@ -4,12 +4,16 @@
 <head>
 <!-- Meta -->
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="description" content="">
 <meta name="author" content="">
 <meta name="keywords" content="MediaCenter, Template, eCommerce">
 <meta name="robots" content="all">
-<title>front premium HTML5 & CSS3 Template</title>
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<link rel="icon" type="image/png" href="/media/iconos/logo.png" />
+<title>{{ config('app.name', 'EFD') }} @yield('title')</title>
+
 
 <!-- Bootstrap Core CSS -->
 {!! Html::style('front/assets/css/bootstrap.min.css') !!}
@@ -37,8 +41,8 @@
 </head>
 <body class="cnt-home">
 <!-- ============================================== HEADER ============================================== -->
-<header class="header-style-1"> 
-  
+<header class="header-style-1">
+
   <!-- ============================================== TOP MENU ============================================== -->
   <div class="top-bar animate-dropdown">
     <div class="container">
@@ -53,7 +57,7 @@
           </ul>
         </div>
         <!-- /.cnt-account -->
-        
+
         <div class="cnt-block">
           <ul class="list-unstyled list-inline">
             <li class="dropdown dropdown-small"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"><span class="value">USD </span><b class="caret"></b></a>
@@ -71,29 +75,29 @@
               </ul>
             </li>
           </ul>
-          <!-- /.list-unstyled --> 
+          <!-- /.list-unstyled -->
         </div>
         <!-- /.cnt-cart -->
         <div class="clearfix"></div>
       </div>
-      <!-- /.header-top-inner --> 
+      <!-- /.header-top-inner -->
     </div>
-    <!-- /.container --> 
+    <!-- /.container -->
   </div>
-  <!-- /.header-top --> 
+  <!-- /.header-top -->
   <!-- ============================================== TOP MENU : END ============================================== -->
   <div class="main-header">
     <div class="container">
       <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-3 logo-holder"> 
+        <div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
           <!-- ============================================================= LOGO ============================================================= -->
           <div class="logo"> <a href="home.html"> <p class="m-0">Ch’uhuk Tradition</p> </a> </div>
-          <!-- /.logo --> 
+          <!-- /.logo -->
           <!-- ============================================================= LOGO : END ============================================================= --> </div>
         <!-- /.logo-holder -->
-        
-        <div class="col-lg-7 col-md-6 col-sm-8 col-xs-12 top-search-holder"> 
-          <!-- /.contact-row --> 
+
+        <div class="col-lg-7 col-md-6 col-sm-8 col-xs-12 top-search-holder">
+          <!-- /.contact-row -->
           <!-- ============================================================= SEARCH AREA ============================================================= -->
           <div class="search-area">
             <form>
@@ -113,13 +117,13 @@
                 <a class="search-button" href="#" ></a> </div>
             </form>
           </div>
-          <!-- /.search-area --> 
+          <!-- /.search-area -->
           <!-- ============================================================= SEARCH AREA : END ============================================================= --> </div>
         <!-- /.top-search-holder -->
-        
-        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 animate-dropdown top-cart-row"> 
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 animate-dropdown top-cart-row">
           <!-- ============================================================= SHOPPING CART DROPDOWN ============================================================= -->
-          
+
           <div class="dropdown dropdown-cart"> <a href="#" class="dropdown-toggle lnk-cart" data-toggle="dropdown">
             <div class="items-cart-inner">
               <div class="basket">
@@ -149,27 +153,25 @@
                   <div class="pull-right"> <span class="text">Sub Total :</span><span class='price'>$600.00</span> </div>
                   <div class="clearfix"></div>
                   <a href="checkout.html" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a> </div>
-                <!-- /.cart-total--> 
-                
+                <!-- /.cart-total-->
+
               </li>
             </ul>
-            <!-- /.dropdown-menu--> 
+            <!-- /.dropdown-menu-->
           </div>
-          <!-- /.dropdown-cart --> 
-          
-          <!-- ============================================================= SHOPPING CART DROPDOWN : END============================================================= --> </div>
-        <!-- /.top-cart-row --> 
-      </div>
-      <!-- /.row --> 
-      
-    </div>
-    <!-- /.container --> 
-    
-  </div>
-  <!-- /.main-header --> 
-  
+          <!-- /.dropdown-cart -->
 
-  
+          <!-- ============================================================= SHOPPING CART DROPDOWN : END============================================================= --> </div>
+        <!-- /.top-cart-row -->
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+  </div>
+  <!-- /.main-header -->
+
   @include('layouts._nav')
 
 
@@ -184,9 +186,9 @@
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-3">
         <div class="address-block">
-        
+
           <!-- /.module-heading -->
-          
+
           <div class="module-body">
             <ul class="toggle-footer" style="">
               <li class="media">
@@ -208,16 +210,16 @@
             </ul>
           </div>
           </div>
-          <!-- /.module-body --> 
+          <!-- /.module-body -->
         </div>
         <!-- /.col -->
-        
+
         <div class="col-xs-12 col-sm-6 col-md-3">
           <div class="module-heading">
             <h4 class="module-title">Customer Service</h4>
           </div>
           <!-- /.module-heading -->
-          
+
           <div class="module-body">
             <ul class='list-unstyled'>
               <li class="first"><a href="#" title="Contact us">My Account</a></li>
@@ -227,16 +229,16 @@
               <li class="last"><a href="#" title="Where is my order?">Help Center</a></li>
             </ul>
           </div>
-          <!-- /.module-body --> 
+          <!-- /.module-body -->
         </div>
         <!-- /.col -->
-        
+
         <div class="col-xs-12 col-sm-6 col-md-3">
           <div class="module-heading">
             <h4 class="module-title">Corporation</h4>
           </div>
           <!-- /.module-heading -->
-          
+
           <div class="module-body">
             <ul class='list-unstyled'>
               <li class="first"><a title="Your Account" href="#">About us</a></li>
@@ -246,16 +248,16 @@
               <li class="last"><a title="Orders History" href="#">Advanced Search</a></li>
             </ul>
           </div>
-          <!-- /.module-body --> 
+          <!-- /.module-body -->
         </div>
         <!-- /.col -->
-        
+
         <div class="col-xs-12 col-sm-6 col-md-3">
           <div class="module-heading">
             <h4 class="module-title">Why Choose Us</h4>
           </div>
           <!-- /.module-heading -->
-          
+
           <div class="module-body">
             <ul class='list-unstyled'>
               <li class="first"><a href="#" title="About us">Shopping Guide</a></li>
@@ -265,7 +267,7 @@
               <li class=" last"><a href="contact-us.html" title="Suppliers">Contact Us</a></li>
             </ul>
           </div>
-          <!-- /.module-body --> 
+          <!-- /.module-body -->
         </div>
       </div>
     </div>
@@ -287,29 +289,27 @@
             <li><img src="front/assets/images/payments/5.png" alt=""></li>
           </ul>
         </div>
-        <!-- /.payment-methods --> 
+        <!-- /.payment-methods -->
       </div>
     </div>
   </div>
 </footer>
-<!-- ============================================================= FOOTER : END============================================================= --> 
+<!-- ============================================================= FOOTER : END============================================================= -->
 
-<!-- For demo purposes – can be removed on production --> 
 
-<!-- For demo purposes – can be removed on production : End --> 
 
-<!-- JavaScripts placed at the end of the document so the pages load faster --> 
-{!! Html::script('front/assets/js/jquery-1.11.1.min.js') !!} 
-{!! Html::script('front/assets/js/bootstrap.min.js') !!} 
-{!! Html::script('front/assets/js/bootstrap-hover-dropdown.min.js') !!} 
-{!! Html::script('front/assets/js/owl.carousel.min.js') !!} 
-{!! Html::script('front/assets/js/echo.min.js') !!} 
-{!! Html::script('front/assets/js/jquery.easing-1.3.min.js') !!} 
-{!! Html::script('front/assets/js/bootstrap-slider.min.js') !!} 
-{!! Html::script('front/assets/js/jquery.rateit.min.js') !!} 
-{!! Html::script('front/assets/js/lightbox.min.js') !!} 
-{!! Html::script('front/assets/js/bootstrap-select.min.js') !!} 
-{!! Html::script('front/assets/js/wow.min.js') !!} 
+<!-- JavaScripts placed at the end of the document so the pages load faster -->
+{!! Html::script('front/assets/js/jquery-1.11.1.min.js') !!}
+{!! Html::script('front/assets/js/bootstrap.min.js') !!}
+{!! Html::script('front/assets/js/bootstrap-hover-dropdown.min.js') !!}
+{!! Html::script('front/assets/js/owl.carousel.min.js') !!}
+{!! Html::script('front/assets/js/echo.min.js') !!}
+{!! Html::script('front/assets/js/jquery.easing-1.3.min.js') !!}
+{!! Html::script('front/assets/js/bootstrap-slider.min.js') !!}
+{!! Html::script('front/assets/js/jquery.rateit.min.js') !!}
+{!! Html::script('front/assets/js/lightbox.min.js') !!}
+{!! Html::script('front/assets/js/bootstrap-select.min.js') !!}
+{!! Html::script('front/assets/js/wow.min.js') !!}
 {!! Html::script('front/assets/js/scripts.js') !!}
 </body>
 
