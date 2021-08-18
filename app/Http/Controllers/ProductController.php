@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Subcategory;
+use App\Tag;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -21,8 +22,9 @@ class ProductController extends Controller
     }
     public function create()
     {
+        $tags = Tag::orderBy('name','ASC')->get();
         $subcategories = Subcategory::orderBy('name','ASC')->pluck('name','id');
-        return view('admin.products.create', compact('subcategories'));
+        return view('admin.products.create', compact('subcategories', 'tags'));
     }
     public function store(Request $request)
     {

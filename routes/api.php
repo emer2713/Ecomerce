@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use Yajra\Datatables\Facades\Datatables;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,3 +19,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::delete('/eliminarimagen/{id}','Api\ProductController@eliminarimagen')->name('api.eliminarimagen');
+
+Route::get('categories', function (){
+
+    $query = App\Category::query()
+    ->select([
+      'categories.id',
+      'categories.name',
+
+    ]);
+    return datatables($query)
+    ->addColumn('btn','categories.actions')
+    ->rawColumns(['btn'])
+    ->toJson();
+});

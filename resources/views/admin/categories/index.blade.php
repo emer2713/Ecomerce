@@ -14,7 +14,7 @@
 	  </div>
 	</div>
 	<div class="card-body table-responsive p-0">
-
+        <!--
 		<ul class="nav nav-tabs">
 			@foreach (getModulesArray() as $module => $item)
 			<li class="nav-item">
@@ -22,7 +22,7 @@
 			</li>
 			@endforeach
 		</ul>
-
+    -->
 	  <table class="table">
 		  <thead>
 			  <tr>
@@ -52,10 +52,10 @@
 			  @endforeach
 		  </tbody>
 	  </table>
-	{{$categories->render()}}
+
 	</div>
 	<div class="card-footer">
-	  Footer
+        {{$categories->render()}}
     </div>
   </div>
 @endsection

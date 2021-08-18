@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,7 +35,7 @@ Route::get('/rastrea-tu-orden','WebController@trackOrders')->name('web.trackOrde
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin', 'HomeController@index')->name('home');
 Route::resource('admin/categories','CategoryController')->names('categories');
 Route::get('admin/category/{module}','CategoryController@module')->name('categories.module');
 Route::resource('admin/subcategories','SubcategoryController')->names('subcategories');
@@ -44,7 +44,7 @@ Route::resource('admin/posts','PostController')->names('posts');
 Route::resource('admin/products','ProductController')->names('products');
 Route::resource('admin/carousels', 'CarouselController')->names('carousels');
 
- 
+
 Route::post('/comment/store','CommentController@store')->name('comment.add');
 Route::post('/reply/store','CommentController@replyStore')->name('reply.add');
 

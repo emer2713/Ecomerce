@@ -15,41 +15,38 @@ class WebController extends Controller
 {
     public function index()
     {
-        $category = Category::where('front','YES')->with('subcategories')->firstOrFail();
-        //$category = Category::with('subcategories')->get();
-                 
+        //$category = Category::where('front','YES')->with('subcategories')->firstOrFail();
+        $category = Category::with('subcategories')->get();
 
 
-            $productsCategory = Product::where('status','PUBLISHED')->whereHas('subcategory.category',function($query) use ($category){
-                $query->where('id',$category->id);
-            })->with('images')->get()->take(6);
+
 
         $productsFeatured =Product::where('status','PUBLISHED')->where('state',4)->with('images')->get()->take(6);
 
         $productsNew =Product::where('status','PUBLISHED')->orderBy('id','DESC')->with('images')->get()->take(6);
          $latestBlogs =Post::where('status','PUBLISHED')->orderBy('id','DESC')->get()->take(5);
-        
+
         $hotDeals =Product::where('status','PUBLISHED')->orderBy('previousPrice','DESC')->with('images')->get()->take(3);
-        
+
         //$specialOffers=Product::where('status','PUBLISHED')->where('state',5)->with('images')->get()->take(9);
-        
+
         //$specialDeals=Product::where('status','PUBLISHED')->where('state',6)->with('images')->get()->take(9);
 
         $tags=Tag::get();
 
-        $carousels=Carousel::orderBy('id','DESC')->get()->take(3);
+        $carousels=Carousel::orderBy('id','DESC')->get();
         //$socials=Social::orderBy('id','DESC')->get();
 
        // return view('web.index', compact('socials','carousels','tags','specialDeals','specialOffers','hotDeals','latestBlogs','category','productsCategory','productsFeatured','productsNew'));
        $data = [
            'category' => $category,
-           'productsCategory' => $productsCategory,
+
            'productsFeatured' => $productsFeatured,
            'productsNew' => $productsNew,
            'latestBlogs' => $latestBlogs,
            'hotDeals' => $hotDeals,
            'tags' => $tags,
-           'carousels' => $carousels  
+           'carousels' => $carousels
        ];
 
        //dd($latestBlogs);
@@ -78,7 +75,7 @@ class WebController extends Controller
             'products' => $products,
             'tags' => $tags
 
-        ]; 
+        ];
         return view('web.category', $data);
     }
 
@@ -92,7 +89,7 @@ class WebController extends Controller
             'products' => $products,
             'tags'=> $tags
 
-        ]; 
+        ];
         return view('web.category', $data);
     }
     public function checkout()
