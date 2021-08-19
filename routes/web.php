@@ -56,3 +56,7 @@ Route::get('/reply/{comment}/edit','CommentController@edit')->name('comment.edit
 Route::put('/reply/{comment}','CommentController@update')->name('comment.update');
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

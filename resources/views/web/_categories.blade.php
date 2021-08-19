@@ -1,6 +1,6 @@
 
-        <div class="side-menu animate-dropdown outer-bottom-xs">
-          <div class="head"><i class="icon fa fa-align-justify fa-fw"></i> Categories</div>
+        <div class="side-menu animate-dropdown outer-bottom-xs visible-lg">
+          <div class="head"><i class="icon fa fa-align-justify fa-fw"></i> Categorias</div>
           <nav class="yamm megamenu-horizontal">
             <ul class="nav">
                 @foreach ($categorias as $categoria)

@@ -12,14 +12,13 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="icon" type="image/png" href="/media/iconos/logo.png" />
-        <title>{{ config('app.name', 'EFD') }} @yield('title')</title>
+        <title>{{ config('app.name', 'Ch’uhuk Tradition') }} @yield('title')</title>
 
 
         <!-- Bootstrap Core CSS -->
-
-        {!! Html::style('front/assets/css/bootstrap.min.css') !!}
-
-
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
         <!-- Customizable CSS -->
         {!! Html::style('front/assets/css/main.css') !!}
         {!! Html::style('front/assets/css/blue.css') !!}
@@ -49,9 +48,9 @@
                 <!-- ============================================== TOP MENU : END ============================================== -->
 
                 <!-- ============================================== MAIN HEADER ============================================== -->
-                     <!--include('partials.web.mainheader')-->
+                    @include('partials.web.mainheader')
                 <!-- ============================================== MAIN HEADER: END ============================================== -->
-                @include('layouts._nav')
+                    <!--include('layouts._nav') -->
 
             </header>
         <!-- ============================================== HEADER: END ============================================== -->
@@ -63,8 +62,9 @@
         <!-- ============================================================= FOOTER : END============================================================= -->
 
         <!-- JavaScripts placed at the end of the document so the pages load faster -->
+        <script src="https://kit.fontawesome.com/b0d8aefb17.js" crossorigin="anonymous"></script>
         {!! Html::script('front/assets/js/jquery-1.11.1.min.js') !!}
-        {!! Html::script('front/assets/js/bootstrap.min.js') !!}
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
         {!! Html::script('front/assets/js/bootstrap-hover-dropdown.min.js') !!}
         {!! Html::script('front/assets/js/owl.carousel.min.js') !!}
         {!! Html::script('front/assets/js/echo.min.js') !!}

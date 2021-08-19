@@ -1,4 +1,5 @@
 @extends('layouts.web')
+@section('title', 'inicio')
 @section('content')
     <div class="body-content outer-top-vs" id="top-banner-and-menu">
         <div class="container">
