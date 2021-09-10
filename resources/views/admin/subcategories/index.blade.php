@@ -8,7 +8,7 @@
 	<div class="card-header">
 	  <h3 class="card-title">Sección de subcategorías</h3>
 	  <div class="card-tools">
-		<a type="button" class="btn btn-tool" href="{{route('subcategories.create')}}">
+		<a type="button" class="btn btn-tool" href="{{route('subcategories_add')}}">
             <h3 class="card-title" >Agregar <i class="fas fa-plus"></i></h3>
         </a>
 	  </div>
@@ -28,25 +28,25 @@
 					<th scope="row">{{$subcategory->id}}</td>
 					<td>{{$subcategory->name}}</td>
 					<td width="10px">
-						<a class="btn btn-info" href="{{route('subcategories.edit', $subcategory->id)}}">
+						<a class="btn btn-info" href="{{route('subcategories_edit', $subcategory->id)}}">
 							<i class="fas fa-edit"></i>
 						</a>
 					</td>
 					<td width="10px">
-						{!! Form::open(['route'=>['subcategories.destroy',$subcategory->id], 'method'=>'DELETE']) !!}
+						{!! Form::open(['route'=>['subcategories_delete',$subcategory->id], 'method'=>'GET']) !!}
 						<button class="btn btn-danger">
 							<i class="fas fa-trash-alt"></i>
 						</button>
 						{!! Form::close() !!}
 					</td>
 				</tr>
-			  @endforeach	 
+			  @endforeach
 		  </tbody>
 		</table>
-	{{$subcategories->render()}}
+
 	</div>
 	<div class="card-footer">
-	  Footer
+        {{$subcategories->render()}}
 	</div>
   </div>
 @endsection

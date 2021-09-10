@@ -6,7 +6,9 @@ use App\Carousel;
 use Faker\Generator as Faker;
 
 $factory->define(Carousel::class, function (Faker $faker) {
+    $title = $faker->name;
+
     return [
-        //
+        'header' => $title,
     ];
 });

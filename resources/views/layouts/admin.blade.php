@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="routeName" content="{{ Route::currentRouteName() }}">
         <link rel="icon" type="image/png" href="/media/iconos/logo.png" />
         <title>{{ config('app.name', 'EFD') }} @yield('title')</title>
 
@@ -38,9 +39,9 @@
                     @include('partials.admin.wrapper')
                 <!-- /.content-wrapper -->
 
-                <!-- Footer -->
-                    @include('partials.admin.footer')
-                <!-- /.footer -->
+                <!-- Footer
+                    include('partials.admin.footer')
+                 /.footer -->
             </div>
         <!-- ./wrapper -->
 
@@ -70,6 +71,12 @@
                 $(this).addClass('active');
                 });
             })
+        </script>
+         <script>
+            $('.alert').slideDown();
+            setTimeout(function() {
+                $('.alert').slideUp();
+            }, 3000);
         </script>
     </body>
 </html>

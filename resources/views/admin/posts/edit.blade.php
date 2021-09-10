@@ -2,7 +2,7 @@
 @section('title','Editar publicación')
 @section('breadcrumb')
 <li class="breadcrumb-item active">
-	<a href="{{route('posts.index')}}">Publicaciones</a>
+	<a href="{{route('posts')}}">Publicaciones</a>
 </li>
 <li class="breadcrumb-item active">@yield('title')</li>
 @endsection
@@ -11,7 +11,7 @@
 	<div class="card-header">
 	  <h3 class="card-title">Edición de publicación</h3>
     </div>
-    {!! Form::model($post, ['route'=>['posts.update',$post->id],'method'=>'PUT','files' => true]) !!}
+    {!! Form::model($post, ['route'=>['posts_edit',$post->id],'method'=>'POST','files' => true]) !!}
 	<div class="card-body ">
     @include('admin.posts.form.form')
     <div class="card bg-dark text-white">
@@ -22,7 +22,7 @@
     </div>
 	</div>
 	<div class="card-footer">
-      <a class="btn btn-danger float-right" href="{{route('posts.index')}}">Cancelar</a>
+      <a class="btn btn-danger float-right" href="{{route('posts')}}">Cancelar</a>
       <input type="submit" value="Actualizar" class="btn btn-primary">
     </div>
     {!! Form::close() !!}

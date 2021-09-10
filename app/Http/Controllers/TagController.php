@@ -11,6 +11,14 @@ use Illuminate\Support\Str;
 
 class TagController extends Controller
 {
+    public function __Construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('user.status');
+        $this->middleware('user.permissions');
+        $this->middleware('isadmin');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -52,7 +60,7 @@ class TagController extends Controller
     {
         $request->validate([
             'name'=>'required|unique:tags|max:20',
-            'category_id'=>'required|max:20' 
+            'category_id'=>'required|max:20'
         ]);
         $tag = new Tag;
         $tag->name = e($request->name);
@@ -60,7 +68,7 @@ class TagController extends Controller
         $tag->slug = Str::slug($request->name);
         $tag->save();
 
-        return redirect()->route('tags.index')->with('info','Agregado correctamente');
+        return redirect()->route('tags')->with('info','Agregado correctamente');
     }
 
     /**
@@ -76,7 +84,7 @@ class TagController extends Controller
     public function category_id($category_id)
     {
         $tags = Tag::where('category_id', $category_id)->orderby('id','DESC')->paginate();
-        
+
         $data = [
             'tags' => $tags
         ];
@@ -102,7 +110,7 @@ class TagController extends Controller
 
         return view('admin.tags.edit',$data);
 
-        
+
 
     }
 
@@ -117,7 +125,7 @@ class TagController extends Controller
     {
         $request->validate([
             'name'=>'required|max:20',
-            'category_id'=>'required|max:20' 
+            'category_id'=>'required|max:20'
         ]);
         $tag = Tag::where('id', $id)->firstOrFail();
         $tag->name = e($request->name);
@@ -125,7 +133,7 @@ class TagController extends Controller
         $tag->slug = Str::slug($request->name);
         $tag->save();
 
-        return redirect()->route('tags.index')->with('info','Agregado correctamente');
+        return redirect()->route('tags')->with('info','Agregado correctamente');
     }
 
     /**
@@ -137,7 +145,7 @@ class TagController extends Controller
     public function destroy($id)
     {
         $tag = Tag::where('id', $id)->firstOrFail()->delete();
-        return redirect()->route('tags.index')->with('info','Borrado correctamente');
-  
+        return redirect()->route('tags')->with('info','Borrado correctamente');
+
     }
 }

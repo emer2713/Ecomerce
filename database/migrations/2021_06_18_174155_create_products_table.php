@@ -17,8 +17,11 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('subcategory_id')->nullable();
+            $table->unsignedBigInteger('branchoffice_id')->nullable();
             $table->string('name')->nullable();
             $table->string('slug')->nullable();
+            $table->string('sku')->nullable();
+            $table->string('product_view_id')->nullable();
             $table->bigInteger('stock')->nullable();
             $table->bigInteger('quantity')->nullable();
             $table->decimal('actualPrice',12,2)->nullable();

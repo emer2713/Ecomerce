@@ -1,6 +1,6 @@
 
 <div id="hero">
-    <div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
+    <div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm visible-lg visible-md visible-sm">
         @foreach ($carousels as $carousel)
         <div class="item" style="background-image: url({{$carousel->image->url}});">
             <div class="container-fluid">

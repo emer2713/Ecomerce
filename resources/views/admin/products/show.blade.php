@@ -7,7 +7,7 @@
 @section('title','Detalles producto')
 @section('breadcrumb')
 <li class="breadcrumb-item active">
-	<a href="{{route('products.index')}}">Productos</a>
+	<a href="{{route('products')}}">Productos</a>
 </li>
 <li class="breadcrumb-item active">@yield('title')</li>
 @endsection
@@ -41,7 +41,7 @@
               <div class="product-name">{{$product->name}}</div>
               <div class="reviews-counter">
                 {{-- Calificación con estrellas  --}}
-            <span>{{$product->comments_count}} Comentarios</span> 
+            <span>{{$product->comments_count}} Comentarios</span>
           </div>
               <div class="product-price-discount"><span>{{$product->previousPrice}}</span><span class="line-through">{{$product->actualPrice}}</span></div>
             </div>
@@ -63,7 +63,7 @@
                     <p>Oferta</p>
                     @endif
                     @if ($product->state == 3)
-                    <p>Rebaja</p> 
+                    <p>Rebaja</p>
                     @endif
                 @endif
               </div>
@@ -102,18 +102,18 @@
           <div class="card my-4">
             <h5 class="card-header">Deja un comentario:</h5>
             <div class="card-body">
-              
+
               {!! Form::open(['route'=>'productComment.add', 'method'=>'POST']) !!}
                 <div class="form-group">
                   <input type="hidden" name="product_id" value="{{$product->id}}">
                   <textarea class="form-control" name="body" rows="3"></textarea>
                 </div>
-                
+
                 <input type="submit" class="btn btn-primary" value="Enviar">
               {!! Form::close() !!}
             </div>
           </div>
-      
+
       @include('admin.products._replies',['comments'=>$product->comments, 'product_id'=>$product->id])
         </div>
     </div>
@@ -121,7 +121,7 @@
     </div>
 	</div>
 	<div class="card-footer">
-      <a class="btn btn-primary" href="{{route('products.index')}}">Regresar</a>
+      <a class="btn btn-primary" href="{{route('products')}}">Regresar</a>
   </div>
   </div>
 @endsection
@@ -133,11 +133,11 @@
   window.alert = function(){};
   var defaultCSS = document.getElementById('bootstrap-css');
   function changeCSS(css){
-      if(css) $('head > link').filter(':first').replaceWith('<link rel="stylesheet" href="'+ css +'" type="text/css" />'); 
-      else $('head > link').filter(':first').replaceWith(defaultCSS); 
+      if(css) $('head > link').filter(':first').replaceWith('<link rel="stylesheet" href="'+ css +'" type="text/css" />');
+      else $('head > link').filter(':first').replaceWith(defaultCSS);
   }
   $( document ).ready(function() {
-    var iframe_height = parseInt($('html').height()); 
+    var iframe_height = parseInt($('html').height());
     window.parent.postMessage( iframe_height, '');
   });
 </script>
@@ -147,13 +147,13 @@
 	$(document).ready(function() {
 		    var slider = $("#slider");
 		    var thumb = $("#thumb");
-		    var slidesPerPage = 4; 
+		    var slidesPerPage = 4;
 		    var syncedSecondary = true;
 		    slider.owlCarousel({
 		        items: 1,
 		        slideSpeed: 2000,
 		        nav: false,
-		        autoplay: false, 
+		        autoplay: false,
 		        dots: false,
 		        loop: true,
 		        responsiveRefreshRate: 200
@@ -169,7 +169,7 @@
 		            item: 4,
 		            smartSpeed: 200,
 		            slideSpeed: 500,
-		            slideBy: slidesPerPage, 
+		            slideBy: slidesPerPage,
 		        	navText: ['<svg width="18px" height="18px" viewBox="0 0 11 20"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M9.554,1.001l-8.607,8.607l8.607,8.606"/></svg>', '<svg width="25px" height="25px" viewBox="0 0 11 20" version="1.1"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M1.054,18.214l8.606,-8.606l-8.606,-8.607"/></svg>'],
 		            responsiveRefreshRate: 100
 		        }).on('changed.owl.carousel', syncPosition2);
@@ -217,13 +217,13 @@
                     { now--;}
                     $(".qty").val(now);
                 }
-            })            
+            })
             $(".qtyplus").on("click",function(){
                 var now = $(".qty").val();
                 if ($.isNumeric(now)){
                     $(".qty").val(parseInt(now)+1);
                 }
             });
-    });	
+    });
   </script>
 @endsection

@@ -1,11 +1,11 @@
 <div class="form-group">
     {!! Form::label('name','Nombre') !!}
     {!! Form::text('name', null, ['class'=>'form-control']) !!}
-</div>   
+</div>
 <div class="form-group">
     {!! Form::label('icon','Icono') !!}
     {!! Form::text('icon', null, ['class'=>'form-control']) !!}
-</div> 
+</div>
 <div class="form-row">
     <div class="form-group col">
         {!! Form::label('category_id','Imagen') !!}
@@ -18,9 +18,9 @@
         </small>
     </div>
     <div class="form-group">
-        {!! Form::label('module','Modulo') !!}  
+        {!! Form::label('module','Modulo') !!}
         {!! Form::select('module', getModulesArray(),null, ['class'=>'form-control']) !!}
-    </div>  
+    </div>
 </div>
 <div class="form-group">
     {!! Form::label('front','¿La categoría estará en la portada?') !!}

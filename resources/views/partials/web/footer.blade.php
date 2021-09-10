@@ -34,17 +34,17 @@
 
             <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="module-heading">
-                <h4 class="module-title">Customer Service</h4>
+                <h4 class="module-title">Servicio al cliente</h4>
             </div>
             <!-- /.module-heading -->
 
             <div class="module-body">
                 <ul class='list-unstyled'>
-                <li class="first"><a href="#" title="Contact us">My Account</a></li>
-                <li><a href="#" title="About us">Order History</a></li>
-                <li><a href="#" title="faq">FAQ</a></li>
-                <li><a href="#" title="Popular Searches">Specials</a></li>
-                <li class="last"><a href="#" title="Where is my order?">Help Center</a></li>
+                <li class="first"><a href="#" title="Contact us">Mi cuenta</a></li>
+                <li><a href="#" title="About us">Historial de pedidos</a></li>
+                <li><a href="#" title="faq">PREGUNTAS MÁS FRECUENTES</a></li>
+                <li><a href="#" title="Popular Searches">Especiales</a></li>
+                <li class="last"><a href="#" title="Where is my order?">Centro de ayuda</a></li>
                 </ul>
             </div>
             <!-- /.module-body -->
@@ -53,17 +53,17 @@
 
             <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="module-heading">
-                <h4 class="module-title">Corporation</h4>
+                <h4 class="module-title">Corporación</h4>
             </div>
             <!-- /.module-heading -->
 
             <div class="module-body">
                 <ul class='list-unstyled'>
-                <li class="first"><a title="Your Account" href="#">About us</a></li>
-                <li><a title="Information" href="#">Customer Service</a></li>
-                <li><a title="Addresses" href="#">Company</a></li>
-                <li><a title="Addresses" href="#">Investor Relations</a></li>
-                <li class="last"><a title="Orders History" href="#">Advanced Search</a></li>
+                <li class="first"><a title="Your Account" href="#">Sobre nosotros</a></li>
+                <li><a title="Information" href="#">Servicio al cliente</a></li>
+                <li><a title="Addresses" href="#">Compañía</a></li>
+                <li><a title="Addresses" href="#">Relaciones con inversores</a></li>
+                <li class="last"><a title="Orders History" href="#">Búsqueda avanzada</a></li>
                 </ul>
             </div>
             <!-- /.module-body -->
@@ -72,17 +72,17 @@
 
             <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="module-heading">
-                <h4 class="module-title">Why Choose Us</h4>
+                <h4 class="module-title">Por qué elegirnos</h4>
             </div>
             <!-- /.module-heading -->
 
             <div class="module-body">
                 <ul class='list-unstyled'>
-                <li class="first"><a href="#" title="About us">Shopping Guide</a></li>
+                <li class="first"><a href="#" title="About us">Guía de compras</a></li>
                 <li><a href="#" title="Blog">Blog</a></li>
-                <li><a href="#" title="Company">Company</a></li>
-                <li><a href="#" title="Investor Relations">Investor Relations</a></li>
-                <li class=" last"><a href="contact-us.html" title="Suppliers">Contact Us</a></li>
+                <li><a href="#" title="Company">Compañía</a></li>
+                <li><a href="#" title="Investor Relations">Relaciones con inversores</a></li>
+                <li class=" last"><a href="contact-us.html" title="Suppliers">Contáctenos</a></li>
                 </ul>
             </div>
             <!-- /.module-body -->
@@ -96,7 +96,7 @@
             <ul class="link">
                 </ul>
         </div>
-        <div class="col-xs-12 col-sm-4 no-padding copyright"><a target="_blank" href="https://www.templateshub.net">Templates Hub</a> </div>
+
         <div class="col-xs-12 col-sm-4 no-padding">
             <div class="clearfix payment-methods">
             <ul>

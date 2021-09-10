@@ -13,7 +13,7 @@ $factory->define(Category::class, function (Faker $faker) {
     return [
         'name' => $title,
         'slug' => $slug,
-        'module' 	=> rand(0,1),
-        'front'        => $faker->randomElement(['YES', 'NO']),
+        'module' => rand(0,1),
+        'front' => $faker->randomElement(['YES', 'NO']),
     ];
 });
