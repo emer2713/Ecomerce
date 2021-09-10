@@ -16,10 +16,10 @@ class CreateCarouselsTable extends Migration
         Schema::create('carousels', function (Blueprint $table) {
             $table->id();
             $table->string('header');
-            $table->string('text');
-            $table->string('excerpt');
-            $table->string('buttonText');
-            $table->string('buttonLink');
+            $table->string('text')->nullable();;
+            $table->string('excerpt')->nullable();;
+            $table->string('buttonText')->nullable();;
+            $table->string('buttonLink')->nullable();;
             $table->timestamps();
         });
     }

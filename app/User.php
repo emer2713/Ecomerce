@@ -44,4 +44,8 @@ class User extends Authenticatable
     public function products(){
         return $this->hasmany(Product::class);
     }
+
+    public function checkins(){
+        return $this->hasmany(UserCheckin::class);
+    }
 }

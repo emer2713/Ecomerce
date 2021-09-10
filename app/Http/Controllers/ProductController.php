@@ -11,13 +11,17 @@ use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
-    public function __construct()
+    public function __Construct()
     {
         $this->middleware('auth');
+        $this->middleware('user.status');
+        $this->middleware('user.permissions');
+        $this->middleware('isadmin');
     }
+
     public function index()
     {
-        $products = Product::orderBy('id','DESC')->paginate(15);
+        $products = Product::orderBy('id','DESC')->paginate(10);
         return view('admin.products.index', compact('products'));
     }
     public function create()
@@ -64,9 +68,10 @@ class ProductController extends Controller
         $product->longDescription = e($request->longDescription);
         $product->state = e($request->state);
         $product->status = e($request->status);
+
         $product->save();
         $product->images()->createMany($urlimages);
-        return redirect()->route('products.index')->with('info','Agregado correctamente');
+        return redirect()->route('products')->with('info','Agregado correctamente');
     }
     public function show($id)
     {
@@ -75,9 +80,10 @@ class ProductController extends Controller
     }
     public function edit($id)
     {
+        $tags = Tag::orderBy('name','ASC')->get();
         $product = Product::where('id',$id)->firstOrFail();
         $subcategories = Subcategory::orderBy('name','ASC')->pluck('name','id');
-        return view('admin.products.edit',compact('product','subcategories'));
+        return view('admin.products.edit',compact('product','subcategories', 'tags'));
     }
     public function update(Request $request, $id)
     {
@@ -125,7 +131,7 @@ class ProductController extends Controller
         if ($request->hasFile('images')){
             $product->images()->createMany($urlimages);
         }
-        return redirect()->route('products.index')->with('info','Actualizado correctamente');
+        return redirect()->route('products')->with('info','Actualizado correctamente');
     }
     public function destroy($id)
     {

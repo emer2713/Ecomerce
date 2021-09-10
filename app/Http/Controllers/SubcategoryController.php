@@ -4,13 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Subcategory;
 use App\Category;
- 
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
 class SubcategoryController extends Controller
 {
+    public function __Construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('user.status');
+        $this->middleware('user.permissions');
+        $this->middleware('isadmin');
+    }
+
     public function index()
     {
         $subcategories = Subcategory::orderby('id','DESC')->paginate(15);
@@ -47,7 +55,7 @@ class SubcategoryController extends Controller
     {
         $request->validate([
             'name'=>'required|unique:subcategories|max:20',
-            
+
         ]);
         $category = new Subcategory;
         $category->name = e($request->name);
@@ -55,7 +63,7 @@ class SubcategoryController extends Controller
         $category->slug = Str::slug($request->name);
         $category->save();
 
-        return redirect()->route('subcategories.index')->with('info','Agregado correctamente');
+        return redirect()->route('subcategories')->with('info','Agregado correctamente');
     }
 
     /**
@@ -97,7 +105,7 @@ class SubcategoryController extends Controller
 
         return view('admin.subcategories.edit',$data);
 
-        
+
 
     }
 
@@ -112,7 +120,7 @@ class SubcategoryController extends Controller
     {
         $request->validate([
             'name'=>'required|max:20',
-            'category_id'=>'required' 
+            'category_id'=>'required'
         ]);
         $category = Subcategory::where('id', $id)->firstOrFail();
         $category->name = e($request->name);
@@ -120,7 +128,7 @@ class SubcategoryController extends Controller
         $category->slug = Str::slug($request->name);
         $category->save();
 
-        return redirect()->route('subcategories.index')->with('info','Agregado correctamente');
+        return redirect()->route('subcategories')->with('info','Agregado correctamente');
     }
 
     /**
@@ -132,7 +140,7 @@ class SubcategoryController extends Controller
     public function destroy($id)
     {
         $category = Subcategory::where('id', $id)->firstOrFail()->delete();
-        return redirect()->route('subcategories.index')->with('info','Borrado correctamente');
-  
+        return redirect()->route('subcategories')->with('info','Borrado correctamente');
+
     }
 }

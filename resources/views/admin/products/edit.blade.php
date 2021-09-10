@@ -2,7 +2,7 @@
 @section('title','Editar producto')
 @section('breadcrumb')
 <li class="breadcrumb-item active">
-	<a href="{{route('products.index')}}">Productos</a>
+	<a href="{{route('products')}}">Productos</a>
 </li>
 <li class="breadcrumb-item active">@yield('title')</li>
 @endsection
@@ -11,7 +11,7 @@
 	<div class="card-header">
 	  <h3 class="card-title">Edición de producto</h3>
     </div>
-    {!! Form::model($product, ['route'=>['products.update',$product->id],'method'=>'PUT','files' => true]) !!}
+    {!! Form::model($product, ['route'=>['products_edit',$product->id],'method'=>'POST','files' => true]) !!}
 	<div class="card-body ">
     @include('admin.products.form.form')
     <section class="content">
@@ -21,7 +21,7 @@
             <div class="card card-primary card-outline">
               <div class="card-header">
                 <div class="card-title">
-                  Galeria  de imagenes 
+                  Galeria  de imagenes
                 </div>
               </div>
               <div class="card-body " id="apiproduct">
@@ -29,7 +29,7 @@
                   @foreach ($product->images as $image)
                   <div class="col-sm-3" id="idimagen-{{$image->id}}">
                     <a href="{{$image->url}}" data-toggle="lightbox" data-title="Id: {{$image->id}}" data-gallery="gallery">
-                      <img  src="{{$image->url}}" class="img-fluid mb-2"/>                                   
+                      <img  src="{{$image->url}}" class="img-fluid mb-2"/>
                     </a>
                     <br>
                     <a class="texto-encima" href="{{$image->url}}"
@@ -48,7 +48,7 @@
   </section>
 	</div>
 	<div class="card-footer">
-      <a class="btn btn-danger float-right" href="{{route('products.index')}}">Cancelar</a>
+      <a class="btn btn-danger float-right" href="{{route('products')}}">Cancelar</a>
       <input type="submit" value="Actualizar" class="btn btn-primary">
     </div>
     {!! Form::close() !!}

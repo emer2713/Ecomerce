@@ -10,7 +10,7 @@ $factory->define(Subcategory::class, function (Faker $faker) {
     $title = $faker->name;
     $slug = Str::slug($title);
     return [
-        'category_id' 	=> rand(1,20),
+        'category_id' 	=> rand(1,5),
         'name' => $title,
         'slug' => $slug,
     ];

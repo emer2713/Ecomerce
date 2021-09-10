@@ -8,7 +8,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class CategoryController extends Controller
-{
+{    public function __Construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('user.status');
+        $this->middleware('user.permissions');
+        $this->middleware('isadmin');
+    }
+
     public function index()
     {
         $categories = Category::orderBy('id','DESC')->paginate(15);
@@ -42,7 +49,7 @@ class CategoryController extends Controller
         if ($request->hasFile('image')){
             $category->image()->create($urlimage);
         }
-        return redirect()->route('categories.index')->with('info','Agregado correctamente');
+        return redirect()->route('categories')->with('info','Agregado correctamente');
     }
     public function module($module)
     {
@@ -84,7 +91,7 @@ class CategoryController extends Controller
         if ($request->hasFile('image')){
             $category->image()->create($urlimage);
         }
-        return redirect()->route('categories.index')->with('info','Actualizado correctamente');
+        return redirect()->route('categories')->with('info','Actualizado correctamente');
     }
     public function destroy($id)
     {

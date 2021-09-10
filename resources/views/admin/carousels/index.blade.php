@@ -8,7 +8,7 @@
 	<div class="card-header">
 	  <h3 class="card-title">Sección de carrusel</h3>
 	  <div class="card-tools">
-		<a type="button" class="btn btn-tool" href="{{route('carousels.create')}}">
+		<a type="button" class="btn btn-tool" href="{{route('carousels_add')}}">
             <h3 class="card-title" >Agregar <i class="fas fa-plus"></i></h3>
         </a>
 	  </div>
@@ -36,12 +36,12 @@
 				  <td>{{$carousel->buttonText}}</td>
 				  <td> {{$carousel->image->url}} </td>
 			  	<td width="10px">
-					<a class="btn btn-info" href="{{route('carousels.edit', $carousel->id)}}">
+					<a class="btn btn-info" href="{{route('carousels_edit', $carousel->id)}}">
 						<i class="fas fa-edit"></i>
 					</a>
 				</td>
 				<td width="10px">
-					{!! Form::open(['route'=>['carousels.destroy',$carousel->id], 'method'=>'DELETE']) !!}
+					{!! Form::open(['route'=>['carousels_delete',$carousel->id], 'method'=>'GET']) !!}
 					<button class="btn btn-danger">
 						<i class="fas fa-trash-alt"></i>
 					</button>
@@ -51,10 +51,10 @@
 			  @endforeach
 		  </tbody>
 	  </table>
-	{{$carousels->render()}}
+
 	</div>
 	<div class="card-footer">
-	  Footer
+        {{$carousels->render()}}
 	</div>
   </div>
 @endsection

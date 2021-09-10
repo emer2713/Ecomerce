@@ -8,7 +8,7 @@
 	<div class="card-header">
 	  <h3 class="card-title">Sección de etiquetas</h3>
 	  <div class="card-tools">
-		<a type="button" class="btn btn-tool" href="{{route('tags.create')}}">
+		<a type="button" class="btn btn-tool" href="{{route('tags_add')}}">
             <h3 class="card-title" >Agregar <i class="fas fa-plus"></i></h3>
         </a>
 	  </div>
@@ -28,12 +28,12 @@
 				  <th scope="row">{{$tag->id}}</td>
 				  <td>{{$tag->name}}</td>
 			  	<td width="10px">
-					<a class="btn btn-info" href="{{route('tags.edit', $tag->id)}}">
+					<a class="btn btn-info" href="{{route('tags_edit', $tag->id)}}">
 						<i class="fas fa-edit"></i>
 					</a>
 				</td>
 				<td width="10px">
-					{!! Form::open(['route'=>['tags.destroy',$tag->id], 'method'=>'DELETE']) !!}
+					{!! Form::open(['route'=>['tags_delete',$tag->id], 'method'=>'GET']) !!}
 					<button class="btn btn-danger">
 						<i class="fas fa-trash-alt"></i>
 					</button>
@@ -43,10 +43,10 @@
 			  @endforeach
 		  </tbody>
 	  </table>
-	{{$tags->render()}}
+
 	</div>
 	<div class="card-footer">
-	  Footer
+        {{$tags->render()}}
 	</div>
   </div>
 @endsection

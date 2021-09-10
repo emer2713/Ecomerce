@@ -12,13 +12,18 @@ use App\Comment;
 
 class PostController extends Controller
 {
-    public function __construct()
+
+    public function __Construct()
     {
         $this->middleware('auth');
+        $this->middleware('user.status');
+        $this->middleware('user.permissions');
+        $this->middleware('isadmin');
     }
+
     public function index()
     {
-        $posts = Post::orderBy('id','DESC')->paginate(15);
+        $posts = Post::orderBy('id','DESC')->paginate(10);
         return view('admin.posts.index', compact('posts'));
     }
     public function create()
@@ -27,7 +32,7 @@ class PostController extends Controller
         return view('admin.posts.create', compact('categories'));
     }
     public function store(Request $request)
-    { 
+    {
         $request->validate([
             'name'=>'required|unique:posts|max:60',
             'user_id'=>'required|integer',
@@ -54,7 +59,7 @@ class PostController extends Controller
         $post->status = e($request->status);
         $post->save();
         $post->image()->create($urlimage);
-        return redirect()->route('posts.index')->with('info','Agregado correctamente');
+        return redirect()->route('posts')->with('info','Agregado correctamente');
     }
     public function show($id)
     {
@@ -65,7 +70,7 @@ class PostController extends Controller
     {
         $post = Post::where('id',$id)->firstOrFail();
         $categories = Category::where('module',1)->orderBy('name','ASC')->pluck('name','id');
-         
+
         return view('admin.posts.edit',compact('post','categories'));
     }
     public function update(Request $request, $id)
@@ -101,7 +106,7 @@ class PostController extends Controller
         if ($request->hasFile('image')){
             $post->image()->create($urlimage);
         }
-        return redirect()->route('posts.index')->with('info','Actualizado correctamente');
+        return redirect()->route('posts')->with('info','Actualizado correctamente');
     }
     public function destroy($id)
     {

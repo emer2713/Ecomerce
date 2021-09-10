@@ -50,11 +50,19 @@
                 <!-- ============================================== MAIN HEADER ============================================== -->
                     @include('partials.web.mainheader')
                 <!-- ============================================== MAIN HEADER: END ============================================== -->
-                    <!--include('layouts._nav') -->
+                    @include('layouts._nav')
 
             </header>
         <!-- ============================================== HEADER: END ============================================== -->
-
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{$error}}</li>
+            @endforeach
+            </ul>
+        </div>
+        @endif
         @yield('content')
 
         <!-- ============================================================= FOOTER ============================================================= -->
@@ -75,6 +83,22 @@
         {!! Html::script('front/assets/js/bootstrap-select.min.js') !!}
         {!! Html::script('front/assets/js/wow.min.js') !!}
         {!! Html::script('front/assets/js/scripts.js') !!}
+        <script src="{{ asset('js/bootstrap-input-spinner.js') }}"></script>
+        @yield('scripts')
+        <script>
+            $(document).ready(function(){
+
+                $("input[type='number']").inputSpinner();
+            });
+
+        </script>
+
+        <script>
+            $('.alert').slideDown();
+            setTimeout(function() {
+                $('.alert').slideUp();
+            }, 3000);
+        </script>
     </body>
 
 </html>

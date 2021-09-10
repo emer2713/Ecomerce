@@ -15,13 +15,15 @@ $factory->define(Product::class, function (Faker $faker) {
         'name' 			=> $title,
         'slug' 			=> $slug,
         'stock' 	    => rand(1,100),
+        'sku' 	    => rand(100000, 999999),
         'actualPrice'         => $price0,
         'previousPrice'         => $price0,
         'discountRate'         => '0',
-        'shortDescription' 			=> $faker->text(500),
+        'shortDescription' 			=> $faker->text(250),
         'longDescription' 			=> $faker->text(500),
         'status'        => $faker->randomElement(['DRAFT', 'PUBLISHED']),
         'state'  => rand(1,4),
+
 
     ];
 });

@@ -7,24 +7,29 @@ use Illuminate\Http\Request;
 
 class CarouselController extends Controller
 {
-    
+    public function __Construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('user.status');
+        $this->middleware('user.permissions');
+        $this->middleware('isadmin');
+    }
+
     public function index()
     {
         $carousels = Carousel::orderBy('id','DESC')->paginate(15);
         return view('admin.carousels.index', compact('carousels'));
     }
+
     public function create()
     {
         return view('admin.carousels.create');
     }
     public function store(Request $request)
-    { 
+    {
         $request->validate([
             'header'=>'required',
-            'text'=>'required',
-            'excerpt'=>'required',
-            'buttonText'=>'required',
-            'buttonLink'=>'required',
+
             'image'=>'required|image|mimes:jpeg,jpg,png',
         ]);
         if($request->hasFile('image')){
@@ -42,7 +47,7 @@ class CarouselController extends Controller
         $carousel->buttonLink = e($request->buttonLink);
         $carousel->save();
         $carousel->image()->create($urlimage);
-        return redirect()->route('carousels.index')->with('info','Agregado correctamente');
+        return redirect()->route('carousels')->with('info','Agregado correctamente');
     }
     public function show($id)
     {
@@ -58,10 +63,7 @@ class CarouselController extends Controller
     {
         $request->validate([
             'header'=>'required',
-            'text'=>'required',
-            'excerpt'=>'required',
-            'buttonText'=>'required',
-            'buttonLink'=>'required',
+
         ]);
         if($request->hasFile('image')){
             $image=$request->file('image');
@@ -83,7 +85,7 @@ class CarouselController extends Controller
         if ($request->hasFile('image')){
             $carousel->image()->create($urlimage);
         }
-        return redirect()->route('carousels.index')->with('info','Actualizado correctamente');
+        return redirect()->route('carousels')->with('info','Actualizado correctamente');
     }
     public function destroy($id)
     {

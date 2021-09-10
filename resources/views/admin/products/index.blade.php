@@ -8,7 +8,7 @@
 	<div class="card-header">
 	  <h3 class="card-title">Sección de productos</h3>
 	  <div class="card-tools">
-		<a type="button" class="btn btn-tool" href="{{route('products.create')}}">
+		<a type="button" class="btn btn-tool" href="{{route('products_add')}}">
             <h3 class="card-title" >Agregar <i class="fas fa-plus"></i></h3>
         </a>
 	  </div>
@@ -39,30 +39,30 @@
 					</td>
 					@endif
 					<td width="10px">
-						<a class="btn btn-default btn-sm" href="{{route('products.show', $product->id)}}">
+						<a class="btn btn-default btn-sm" href="{{route('products_show', $product->id)}}">
 							<i class="fas fa-eye"></i>
 						</a>
 					</td>
 					<td width="10px">
-						<a class="btn btn-default btn-sm" href="{{route('products.edit', $product->id)}}">
+						<a class="btn btn-default btn-sm" href="{{route('products_edit', $product->id)}}">
 							<i class="fas fa-edit"></i>
 						</a>
 					</td>
 					<td width="10px">
-						{!! Form::open(['route'=>['products.destroy',$product->id], 'method'=>'DELETE']) !!}
+						{!! Form::open(['route'=>['products_delete',$product->id], 'method'=>'GET']) !!}
 						<button class="btn btn-default btn-sm">
 							<i class="fas fa-trash-alt"></i>
 						</button>
 						{!! Form::close() !!}
 					</td>
 				</tr>
-			  @endforeach	 
+			  @endforeach
 		  </tbody>
 		</table>
-	{{$products->render()}}
+
 	</div>
 	<div class="card-footer">
-	  Footer
+        {{$products->render()}}
 	</div>
   </div>
 @endsection

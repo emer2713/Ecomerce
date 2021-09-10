@@ -8,7 +8,7 @@
 	<div class="card-header">
 	  <h3 class="card-title">Sección de publicaciones</h3>
 	  <div class="card-tools">
-		<a type="button" class="btn btn-tool" href="{{route('posts.create')}}">
+		<a type="button" class="btn btn-tool" href="{{route('posts_add')}}">
             <h3 class="card-title" >Agregar <i class="fas fa-plus"></i></h3>
         </a>
 	  </div>
@@ -30,30 +30,30 @@
 					<td>{{$post->name}}</td>
 					<td>{{$post->abstract}}</td>
 					<td width="10px">
-						<a class="btn btn-default btn-sm" href="{{route('posts.show', $post->id)}}">
+						<a class="btn btn-default btn-sm" href="{{route('posts_show', $post->id)}}">
 							<i class="fas fa-eye"></i>
 						</a>
 					</td>
 					<td width="10px">
-						<a class="btn btn-default btn-sm" href="{{route('posts.edit', $post->id)}}">
+						<a class="btn btn-default btn-sm" href="{{route('posts_edit', $post->id)}}">
 							<i class="fas fa-edit"></i>
 						</a>
 					</td>
 					<td width="10px">
-						{!! Form::open(['route'=>['posts.destroy',$post->id], 'method'=>'DELETE']) !!}
+						{!! Form::open(['route'=>['posts_delete',$post->id], 'method'=>'GET']) !!}
 						<button class="btn btn-default btn-sm">
 							<i class="fas fa-trash-alt"></i>
 						</button>
 						{!! Form::close() !!}
 					</td>
 				</tr>
-			  @endforeach	 
+			  @endforeach
 		  </tbody>
 		</table>
-	{{$posts->render()}}
+
 	</div>
 	<div class="card-footer">
-	  Footer
+        {{$posts->render()}}
 	</div>
   </div>
 @endsection
