@@ -146,7 +146,7 @@
                                     <div class="header">
                                         <h2 class="title">
                                             <i class="fas fa-user-edit"></i>
-                                            Productos más comprados
+                                            Productos más co
                                         </h2>
                                     </div>
 
